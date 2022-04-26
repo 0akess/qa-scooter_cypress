@@ -1,4 +1,4 @@
-import {TrackPage} from "../../pageO/OrderTrackPage";
+import {TrackPage} from "../../pageObject/OrderTrackPage";
 
 it('Проверка поиска заказа со страницы Track с невалидным номером', () =>{
 
