@@ -1,106 +1,213 @@
+import dateTimeISO = CypressCommandLine.dateTimeISO;
+
 export class CreateOrderPage{
 
     static mainPage(){
-        cy.visit('https://qa-scooter.praktikum-services.ru/')
+        cy
+            .visit('https://qa-scooter.praktikum-services.ru/');
+
+        return this;
     }
 
     static orderPage(){
-        return cy.visit('https://qa-scooter.praktikum-services.ru/order')
+        cy
+            .visit('https://qa-scooter.praktikum-services.ru/order');
+
+        return this;
     }
 
     static buttonOrderScooter(){
-        return cy.get('.Header_Nav__AGCXC > .Button_Button__ra12g')
+        cy
+            .get('.Header_Nav__AGCXC > .Button_Button__ra12g')
+            .click();
+
+        return this;
     }
 
     static buttonFinishOrder(){
-        return cy.get('.Order_Buttons__1xGrp > :nth-child(2)')
+        cy
+            .get('.Order_Buttons__1xGrp > :nth-child(2)')
+            .click();
+
+        return this;
     }
 
     static buttonOrderScooterMane(){
-        return cy.get('.Home_FinishButton__1_cWm > .Button_Button__ra12g')
+        cy
+            .get('.Home_FinishButton__1_cWm > .Button_Button__ra12g')
+            .click();
+
+        return this;
     }
 
-    static inputFirstName(){
-        return cy.xpath("//input[@placeholder='* Имя']");
+    static inputFirstName(FirstName: string){
+        cy
+            .xpath("//input[@placeholder='* Имя']")
+            .type(FirstName);
+
+        return this;
     }
 
     static errorMassageFirstName(){
-        return cy.xpath("//div[text()='Введите корректное имя']");
+        cy
+            .xpath("//div[text()='Введите корректное имя']")
+            .should("be.visible");
+
+        return this;
     }
 
-    static inputLastName(){
-        return cy.xpath("//input[@placeholder='* Фамилия']");
+    static inputLastName(LastName: string){
+        cy
+            .xpath("//input[@placeholder='* Фамилия']")
+            .type(LastName);
+
+        return this;
     }
 
-    static inputAddress(){
-        return cy.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
+    static inputAddress(Address: string){
+        cy
+            .xpath("//input[@placeholder='* Адрес: куда привезти заказ']")
+            .type(Address);
+
+        return this;
     }
 
     static errorMassageAddress(){
-        return cy.xpath("//div[text()='Введите корректный адрес']");
+        cy
+            .xpath("//div[text()='Введите корректный адрес']")
+            .should("be.visible");
+
+        return this;
     }
 
-    static inputMetro(){
-        return cy.xpath("//input[@placeholder='* Станция метро']");
+    static inputMetro(Metro: string){
+        cy
+            .xpath("//input[@placeholder='* Станция метро']")
+            .type(Metro);
+        cy
+            .xpath("//*[text()='Сокольники']")
+            .click()
+
+        return this;
     }
 
     static errorMassageMetro(){
-        return cy.xpath("//div[text()='Выберите станцию']");
+        cy
+            .xpath("//div[text()='Выберите станцию']")
+            .should("be.visible");
+
+        return this;
     }
 
-    static inputNumberPhone(){
-        return cy.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
+    static inputNumberPhone(NumberPhone: string){
+        cy
+            .xpath("//input[@placeholder='* Телефон: на него позвонит курьер']")
+            .type(NumberPhone);
+
+        return this;
     }
 
     static errorMassageNumberPhone(){
-        return cy.xpath("//div[text()='Введите корректный номер']");
+        cy
+            .xpath("//div[text()='Введите корректный номер']")
+            .should("be.visible");
+
+        return this;
     }
 
     static buttonNextStep(){
-        return cy.xpath("//button[text()='Далее']")
+        cy
+            .xpath("//button[text()='Далее']")
+            .click();
+
+        return this;
     }
 
-    static inputDateForDelivery(){
-        return cy.xpath("//input[@placeholder='* Когда привезти самокат']");
+    static inputDateForDelivery(DateForDelivery: string){
+        cy
+            .xpath("//input[@placeholder='* Когда привезти самокат']")
+            .type(DateForDelivery);
+
+        return this;
     }
 
     static selectorRentalPeriod(){
-        return cy.xpath("//div[text()='* Срок аренды']");
+        cy
+            .xpath("//div[text()='* Срок аренды']")
+            .click();
+
+        return this;
     }
 
     static dropDawnSelectDayForRent(){
-        return cy.get('.Dropdown-menu > :nth-child(3)');
+        cy
+            .get('.Dropdown-menu > :nth-child(3)')
+            .click();
+
+        return this;
     }
 
     static chooseColorForScooterBlack(){
-        return cy.xpath("//input[@id='black']");
+        cy
+            .xpath("//input[@id='black']")
+            .click();
+
+        return this;
     }
 
     static chooseColorForScooterGrey(){
-        return cy.xpath("//input[@id='grey']");
+        cy
+            .xpath("//input[@id='grey']")
+            .click();
+
+        return this;
     }
 
-    static inputCommentForDelivery(){
-        return cy.xpath("//input[@placeholder='Комментарий для курьера']");
+    static inputCommentForDelivery(CommentForDelivery: string){
+        cy
+            .xpath("//input[@placeholder='Комментарий для курьера']")
+            .type(CommentForDelivery)
+
+        return this;
     }
 
     static buttonStepBack(){
-        return cy.xpath("//button[text()='Назад']");
+        cy
+            .xpath("//button[text()='Назад']")
+            .click();
+
+        return this;
     }
 
     static buttonNoPlaceAnOrder(){
-        return cy.xpath("//*[text()='Нет']");
+        cy
+            .xpath("//*[text()='Нет']")
+            .click();
+
+        return this;
     }
 
     static buttonYesPlaceAnOrder(){
-        return cy.xpath("//div[@class='Order_Buttons__1xGrp']/child::button[text()='Да']");
+        cy
+            .xpath("//div[@class='Order_Buttons__1xGrp']/child::button[text()='Да']")
+            .click();
+
+        return this;
     }
 
     static orderCreatedSuccessful(){
-        return cy.xpath("//*[text()='Заказ оформлен']");
+        cy
+            .xpath("//*[text()='Заказ оформлен']")
+            .should("be.visible");
+
+        return this;
     }
 
     static errorMassageLastName(){
-        return cy.xpath("//div[text()='Введите корректную фамилию']");
+        cy
+            .xpath("//div[text()='Введите корректную фамилию']")
+            .should("be.visible");
+
+        return this;
     }
 }
