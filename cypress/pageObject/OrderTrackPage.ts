@@ -1,34 +1,64 @@
 export class TrackPage{
 
     static openMainePage(){
-        return cy.visit('https://qa-scooter.praktikum-services.ru/')
+        cy
+            .visit('https://qa-scooter.praktikum-services.ru/');
+
+        return this;
     }
 
     static openTrackPage(){
-        return cy.visit('https://qa-scooter.praktikum-services.ru/track/')
+        cy
+            .visit('https://qa-scooter.praktikum-services.ru/track/');
+
+        return this;
     }
 
     static buttonOrderStatus(){
-        return cy.xpath("//*[text()='Статус заказа']")
+        cy
+            .xpath("//*[text()='Статус заказа']")
+            .click();
+
+        return this;
     }
 
-    static inputSearchNumberOrderInHeader(){
-        return cy.xpath("//input[@class='Input_Input__1iN_Z Header_Input__xIoUq']")
+    static inputSearchNumberOrderInHeader(NumberOrder: string){
+        cy
+            .xpath("//input[@class='Input_Input__1iN_Z Header_Input__xIoUq']")
+            .type(NumberOrder)
+
+        return this;
     }
 
     static buttonGoSearchNumberOrder(){
-        return cy.xpath("//button[text()='Go!']")
+        cy
+            .xpath("//button[text()='Go!']")
+            .click();
+
+        return this;
     }
 
-    static inputSearchNumberOrderInOrderStatusPage(){
-        return cy.xpath("//input[@class='Input_Input__1iN_Z Track_Input__1g7lq Input_Responsible__1jDKN']")
+    static inputSearchNumberOrderInOrderStatusPage(NumberOrder: string){
+        cy
+            .xpath("//input[@class='Input_Input__1iN_Z Track_Input__1g7lq Input_Responsible__1jDKN']")
+            .type(NumberOrder);
+
+        return this;
     }
 
     static buttonWatchSearchNumberOrder(){
-        return cy.xpath("//button[text()='Посмотреть']")
+        cy
+            .xpath("//button[text()='Посмотреть']")
+            .click();
+
+        return this;
     }
 
     static imgNotFound(){
-        return cy.xpath("//img[@src='/assets/not-found.png']")
+        cy
+            .xpath("//img[@src='/assets/not-found.png']")
+            .should("be.visible");
+
+        return this;
     }
 }

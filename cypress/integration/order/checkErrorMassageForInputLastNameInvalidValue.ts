@@ -1,10 +1,10 @@
 import {CreateOrderPage} from "../../pageObject/CreateOrderPage";
 
-it('Проверка валидации с неверными параметрами для поля фамилия', () =>{
+it('Проверка валидации с неверными параметрами для поля фамилия', () => {
 
-    CreateOrderPage.orderPage()
-
-    CreateOrderPage.inputLastName().type('sdfs23e')
-    CreateOrderPage.buttonNextStep().click()
-    CreateOrderPage.errorMassageLastName().should("be.visible")
+    CreateOrderPage
+        .orderPage()
+        .inputLastName('sdfs23e')
+        .buttonNextStep()
+        .errorMassageLastName()
 })
