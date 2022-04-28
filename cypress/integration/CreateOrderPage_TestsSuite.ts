@@ -1,4 +1,4 @@
-import {CreateOrderPage} from "../pageObject/CreateOrderPage";
+import {CreateOrderPage} from "../support/pageObject/CreateOrderPage";
 
 it("Создание заказа со входом из главной страницы", () => {
 
