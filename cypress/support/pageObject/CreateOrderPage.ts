@@ -1,22 +1,20 @@
-import dateTimeISO = CypressCommandLine.dateTimeISO;
-
 export class CreateOrderPage{
 
-    static mainPage(){
+    static openMainePage(){
         cy
             .visit('https://qa-scooter.praktikum-services.ru/');
 
         return this;
     }
 
-    static orderPage(){
+    static openOrderPage(){
         cy
             .visit('https://qa-scooter.praktikum-services.ru/order');
 
         return this;
     }
 
-    static buttonOrderScooter(){
+    static clickButtonOrderScooter(){
         cy
             .get('.Header_Nav__AGCXC > .Button_Button__ra12g')
             .click();
@@ -24,7 +22,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonFinishOrder(){
+    static clickButtonFinishOrder(){
         cy
             .get('.Order_Buttons__1xGrp > :nth-child(2)')
             .click();
@@ -32,7 +30,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonOrderScooterMane(){
+    static clickButtonOrderScooterMane(){
         cy
             .get('.Home_FinishButton__1_cWm > .Button_Button__ra12g')
             .click();
@@ -48,7 +46,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static errorMassageFirstName(){
+    static checkErrorMassageFirstName(){
         cy
             .xpath("//div[text()='Введите корректное имя']")
             .should("be.visible");
@@ -72,7 +70,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static errorMassageAddress(){
+    static checkErrorMassageAddress(){
         cy
             .xpath("//div[text()='Введите корректный адрес']")
             .should("be.visible");
@@ -91,7 +89,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static errorMassageMetro(){
+    static checkErrorMassageMetro(){
         cy
             .xpath("//div[text()='Выберите станцию']")
             .should("be.visible");
@@ -107,7 +105,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static errorMassageNumberPhone(){
+    static checkErrorMassageNumberPhone(){
         cy
             .xpath("//div[text()='Введите корректный номер']")
             .should("be.visible");
@@ -115,7 +113,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonNextStep(){
+    static clickButtonNextStep(){
         cy
             .xpath("//button[text()='Далее']")
             .click();
@@ -131,7 +129,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static selectorRentalPeriod(){
+    static clickSelectorRentalPeriod(){
         cy
             .xpath("//div[text()='* Срок аренды']")
             .click();
@@ -139,7 +137,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static dropDawnSelectDayForRent(){
+    static clickDropDawnSelectDayForRent(){
         cy
             .get('.Dropdown-menu > :nth-child(3)')
             .click();
@@ -147,7 +145,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static chooseColorForScooterBlack(){
+    static clickChooseColorForScooterBlack(){
         cy
             .xpath("//input[@id='black']")
             .click();
@@ -155,7 +153,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static chooseColorForScooterGrey(){
+    static clickChooseColorForScooterGrey(){
         cy
             .xpath("//input[@id='grey']")
             .click();
@@ -171,7 +169,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonStepBack(){
+    static clickButtonStepBack(){
         cy
             .xpath("//button[text()='Назад']")
             .click();
@@ -179,7 +177,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonNoPlaceAnOrder(){
+    static clickButtonNoPlaceAnOrder(){
         cy
             .xpath("//*[text()='Нет']")
             .click();
@@ -187,7 +185,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static buttonYesPlaceAnOrder(){
+    static clickButtonYesPlaceAnOrder(){
         cy
             .xpath("//div[@class='Order_Buttons__1xGrp']/child::button[text()='Да']")
             .click();
@@ -195,7 +193,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static orderCreatedSuccessful(){
+    static checkOrderCreatedSuccessful(){
         cy
             .xpath("//*[text()='Заказ оформлен']")
             .should("be.visible");
@@ -203,7 +201,7 @@ export class CreateOrderPage{
         return this;
     }
 
-    static errorMassageLastName(){
+    static checkErrorMassageLastName(){
         cy
             .xpath("//div[text()='Введите корректную фамилию']")
             .should("be.visible");

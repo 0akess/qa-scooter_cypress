@@ -1,22 +1,23 @@
 import {TrackPage} from "../support/pageObject/OrderTrackPage";
 
+
 it('Проверка поиска заказа со страницы Track с невалидным номером', () => {
 
     TrackPage
         .openTrackPage()
         .inputSearchNumberOrderInOrderStatusPage('sdfsd')
-        .buttonWatchSearchNumberOrder()
-        .imgNotFound();
+        .clickButtonWatchSearchNumberOrder()
+        .checkImgNotFound();
 });
 
 it('Проверка поиска заказа со страницы Maine с невалидным номером', () => {
 
     TrackPage
         .openMainePage()
-        .buttonOrderStatus()
+        .clickButtonOrderStatus()
         .inputSearchNumberOrderInHeader('234')
-        .buttonGoSearchNumberOrder()
-        .imgNotFound();
+        .clickButtonGoSearchNumberOrder()
+        .checkImgNotFound();
 });
 
 it('Проверка поиска заказа со страницы Track с невалидным номером', () => {
@@ -24,6 +25,6 @@ it('Проверка поиска заказа со страницы Track с н
     TrackPage
         .openTrackPage()
         .inputSearchNumberOrderInOrderStatusPage('1231')
-        .buttonWatchSearchNumberOrder()
-        .imgNotFound();
+        .clickButtonWatchSearchNumberOrder()
+        .checkImgNotFound();
 });

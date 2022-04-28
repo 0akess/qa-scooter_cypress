@@ -14,7 +14,7 @@ export class TrackPage{
         return this;
     }
 
-    static buttonOrderStatus(){
+    static clickButtonOrderStatus(){
         cy
             .xpath("//*[text()='Статус заказа']")
             .click();
@@ -30,7 +30,7 @@ export class TrackPage{
         return this;
     }
 
-    static buttonGoSearchNumberOrder(){
+    static clickButtonGoSearchNumberOrder(){
         cy
             .xpath("//button[text()='Go!']")
             .click();
@@ -46,7 +46,7 @@ export class TrackPage{
         return this;
     }
 
-    static buttonWatchSearchNumberOrder(){
+    static clickButtonWatchSearchNumberOrder(){
         cy
             .xpath("//button[text()='Посмотреть']")
             .click();
@@ -54,7 +54,7 @@ export class TrackPage{
         return this;
     }
 
-    static imgNotFound(){
+    static checkImgNotFound(){
         cy
             .xpath("//img[@src='/assets/not-found.png']")
             .should("be.visible");
