@@ -1,6 +1,4 @@
-# cypress
-
-набор тестов на Cypress
+Набор тестов написанных на Cypress
 
 **Запуск:**
 1. npm install
